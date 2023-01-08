@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-<title>Surfside Media</title>
+<title>E-Commerce</title>
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -133,11 +133,11 @@
                         <a href="index.html"><img src="{{asset('imgs/logo/logo.png')}}" alt="logo"></a>
                     </div>
                     <div class="header-nav d-none d-lg-flex">
-                        <div class="main-categori-wrap d-none d-lg-block">
-                            <a class="categori-button-active" href="#">
+                        <div class="main-category-wrap d-none d-lg-block">
+                            <a class="category-button-active" href="#">
                                 <span class="fi-rs-apps"></span> Browse Categories
                             </a>
-                            <div class="categori-dropdown-wrap categori-dropdown-active-large">
+                            <div class="category-dropdown-wrap category-dropdown-active-large">
                                 <ul>
                                     <li class="has-children">
                                         <a href="shop.html"><i class="surfsidemedia-font-dress"></i>Women's Clothing</a>
@@ -483,11 +483,11 @@
                     </form>
                 </div>
                 <div class="mobile-menu-wrap mobile-header-border">
-                    <div class="main-categori-wrap mobile-header-border">
-                        <a class="categori-button-active-2" href="#">
+                    <div class="main-category-wrap mobile-header-border">
+                        <a class="category-button-active-2" href="#">
                             <span class="fi-rs-apps"></span> Browse Categories
                         </a>
-                        <div class="categori-dropdown-wrap categori-dropdown-active-small">
+                        <div class="category-dropdown-wrap category-dropdown-active-small">
                             <ul>
                                 <li><a href="shop.html"><i class="surfsidemedia-font-dress"></i>Women's Clothing</a></li>
                                 <li><a href="shop.html"><i class="surfsidemedia-font-tshirt"></i>Men's Clothing</a></li>
@@ -572,6 +572,7 @@
             </div>
         </div>
     </div>
+    
    {{$slot}}
 
     <footer class="main">
