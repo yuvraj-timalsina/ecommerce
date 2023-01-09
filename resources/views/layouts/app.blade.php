@@ -11,7 +11,7 @@
 	<meta property="og:type" content="">
 	<meta property="og:url" content="">
 	<meta property="og:image" content="">
-	<link rel="shortcut icon" type="image/x-icon" href="{{asset('imgs/theme/favicon.ico')}}">
+	<link rel="shortcut icon" type="image/x-icon" href="{{asset('img/theme/favicon.ico')}}">
 	<link rel="stylesheet" href="{{asset('css/main.css')}}">
 	<link rel="stylesheet" href="{{asset('css/custom.css')}}">
 	@livewireStyles
@@ -28,9 +28,9 @@
 								<li>
 									<a class="language-dropdown-active" href="#"> <i class="fi-rs-world"></i> English <i class="fi-rs-angle-small-down"></i></a>
 									<ul class="language-dropdown">
-										<li><a href="#"><img src="{{asset('imgs/theme/flag-fr.png')}}" alt="">Français</a></li>
-										<li><a href="#"><img src="{{asset('imgs/theme/flag-dt.png')}}" alt="">Deutsch</a></li>
-										<li><a href="#"><img src="{{asset('imgs/theme/flag-ru.png')}}" alt="">Pусский</a></li>
+										<li><a href="#"><img src="{{asset('img/theme/flag-fr.png')}}" alt="">Français</a></li>
+										<li><a href="#"><img src="{{asset('img/theme/flag-dt.png')}}" alt="">Deutsch</a></li>
+										<li><a href="#"><img src="{{asset('img/theme/flag-ru.png')}}" alt="">Pусский</a></li>
 									</ul>
 								</li>
 							</ul>
@@ -74,7 +74,7 @@
 			<div class="container">
 				<div class="header-wrap">
 					<div class="logo logo-width-1">
-						<a href="index.html"><img src="{{asset('imgs/logo/logo.png')}}" alt="logo"></a>
+						<a href="index.html"><img src="{{asset('img/logo/logo.png')}}" alt="logo"></a>
 					</div>
 					<div class="header-right">
 						<div class="search-style-1">
@@ -86,20 +86,20 @@
 							<div class="header-action-2">
 								<div class="header-action-icon-2">
 									<a href="shop-wishlist.php">
-										<img class="svgInject" alt="Surfside Media" src="{{asset('imgs/theme/icons/icon-heart.svg')}}">
+										<img class="svgInject" alt="Surfside Media" src="{{asset('img/theme/icons/icon-heart.svg')}}">
 										<span class="pro-count blue">4</span>
 									</a>
 								</div>
 								<div class="header-action-icon-2">
 									<a class="mini-cart-icon" href="cart.html">
-										<img alt="Surfside Media" src="{{asset('imgs/theme/icons/icon-cart.svg')}}">
+										<img alt="Surfside Media" src="{{asset('img/theme/icons/icon-cart.svg')}}">
 										<span class="pro-count blue">2</span>
 									</a>
 									<div class="cart-dropdown-wrap cart-dropdown-hm2">
 										<ul>
 											<li>
 												<div class="shopping-cart-img">
-													<a href="product-details.html"><img alt="Surfside Media" src="{{asset('imgs/shop/thumbnail-3.jpg')}}"></a>
+													<a href="product-details.html"><img alt="Surfside Media" src="{{asset('img/shop/thumbnail-3.jpg')}}"></a>
 												</div>
 												<div class="shopping-cart-title">
 													<h4><a href="product-details.html">Daisy Casual Bag</a></h4>
@@ -111,7 +111,7 @@
 											</li>
 											<li>
 												<div class="shopping-cart-img">
-													<a href="product-details.html"><img alt="Surfside Media" src="{{asset('imgs/shop/thumbnail-2.jpg')}}"></a>
+													<a href="product-details.html"><img alt="Surfside Media" src="{{asset('img/shop/thumbnail-2.jpg')}}"></a>
 												</div>
 												<div class="shopping-cart-title">
 													<h4><a href="product-details.html">Corduroy Shirts</a></h4>
@@ -143,7 +143,7 @@
 			<div class="container">
 				<div class="header-wrap header-space-between position-relative">
 					<div class="logo logo-width-1 d-block d-lg-none">
-						<a href="index.html"><img src="{{asset('imgs/logo/logo.png')}}" alt="logo"></a>
+						<a href="index.html"><img src="{{asset('img/logo/logo.png')}}" alt="logo"></a>
 					</div>
 					<div class="header-nav d-none d-lg-flex">
 						<div class="main-category-wrap d-none d-lg-block">
@@ -188,7 +188,7 @@
 												</li>
 												<li class="mega-menu-col col-lg-5">
 													<div class="header-banner2">
-														<img src="{{asset('imgs/banner/menu-banner-2.jpg')}}" alt="menu_banner1">
+														<img src="{{asset('img/banner/menu-banner-2.jpg')}}" alt="menu_banner1">
 														<div class="banne_info">
 															<h6>10% Off</h6>
 															<h4>New Arrival</h4>
@@ -196,7 +196,7 @@
 														</div>
 													</div>
 													<div class="header-banner2">
-														<img src="{{asset('imgs/banner/menu-banner-3.jpg')}}" alt="menu_banner2">
+														<img src="{{asset('img/banner/menu-banner-3.jpg')}}" alt="menu_banner2">
 														<div class="banne_info">
 															<h6>15% Off</h6>
 															<h4>Hot Deals</h4>
@@ -242,7 +242,7 @@
 												</li>
 												<li class="mega-menu-col col-lg-5">
 													<div class="header-banner2">
-														<img src="{{asset('imgs/banner/menu-banner-4.jpg')}}'" alt="menu_banner1">
+														<img src="{{asset('img/banner/menu-banner-4.jpg')}}'" alt="menu_banner1">
 														<div class="banne_info">
 															<h6>10% Off</h6>
 															<h4>New Arrival</h4>
@@ -289,7 +289,7 @@
 												</li>
 												<li class="mega-menu-col col-lg-5">
 													<div class="header-banner2">
-														<img src="{{asset('imgs/banner/menu-banner-5.jpg')}}" alt="menu_banner1">
+														<img src="{{asset('img/banner/menu-banner-5.jpg')}}" alt="menu_banner1">
 														<div class="banne_info">
 															<h6>10% Off</h6>
 															<h4>New Arrival</h4>
@@ -297,7 +297,7 @@
 														</div>
 													</div>
 													<div class="header-banner2">
-														<img src="{{asset('imgs/banner/menu-banner-6.jpg')}}" alt="menu_banner2">
+														<img src="{{asset('img/banner/menu-banner-6.jpg')}}" alt="menu_banner2">
 														<div class="banne_info">
 															<h6>15% Off</h6>
 															<h4>Hot Deals</h4>
@@ -369,7 +369,7 @@
 											</li>
 											<li class="sub-mega-menu sub-mega-menu-width-34">
 												<div class="menu-banner-wrap">
-													<a href="product-details.html"><img src="{{asset('imgs/banner/menu-banner.jpg')}}" alt="Surfside Media"></a>
+													<a href="product-details.html"><img src="{{asset('img/banner/menu-banner.jpg')}}" alt="Surfside Media"></a>
 													<div class="menu-banner-content">
 														<h4>Hot deals</h4>
 														<h3>Don't miss<br> Trending</h3>
@@ -422,20 +422,20 @@
 						<div class="header-action-2">
 							<div class="header-action-icon-2">
 								<a href="shop-wishlist.php">
-									<img alt="Surfside Media" src="{{asset('imgs/theme/icons/icon-heart.svg')}}">
+									<img alt="Surfside Media" src="{{asset('img/theme/icons/icon-heart.svg')}}">
 									<span class="pro-count white">4</span>
 								</a>
 							</div>
 							<div class="header-action-icon-2">
 								<a class="mini-cart-icon" href="cart.html">
-									<img alt="Surfside Media" src="{{asset('imgs/theme/icons/icon-cart.svg')}}">
+									<img alt="Surfside Media" src="{{asset('img/theme/icons/icon-cart.svg')}}">
 									<span class="pro-count white">2</span>
 								</a>
 								<div class="cart-dropdown-wrap cart-dropdown-hm2">
 									<ul>
 										<li>
 											<div class="shopping-cart-img">
-												<a href="product-details.html"><img alt="Surfside Media" src="{{asset('imgs/shop/thumbnail-3.jpg')}}"></a>
+												<a href="product-details.html"><img alt="Surfside Media" src="{{asset('img/shop/thumbnail-3.jpg')}}"></a>
 											</div>
 											<div class="shopping-cart-title">
 												<h4><a href="product-details.html">Plain Striola Shirts</a></h4>
@@ -447,7 +447,7 @@
 										</li>
 										<li>
 											<div class="shopping-cart-img">
-												<a href="product-details.html"><img alt="Surfside Media" src="{{asset('imgs/shop/thumbnail-4.jpg')}}"></a>
+												<a href="product-details.html"><img alt="Surfside Media" src="{{asset('img/shop/thumbnail-4.jpg')}}"></a>
 											</div>
 											<div class="shopping-cart-title">
 												<h4><a href="product-details.html">Macbook Pro 2022</a></h4>
@@ -486,7 +486,7 @@
 		<div class="mobile-header-wrapper-inner">
 			<div class="mobile-header-top">
 				<div class="mobile-header-logo">
-					<a href="index.html"><img src="{{asset('imgs/logo/logo.png')}}" alt="logo"></a>
+					<a href="index.html"><img src="{{asset('img/logo/logo.png')}}" alt="logo"></a>
 				</div>
 				<div class="mobile-menu-close close-style-wrap close-style-position-inherit">
 					<button class="close-style search-close">
@@ -583,11 +583,11 @@
 				</div>
 				<div class="mobile-social-icon">
 					<h5 class="mb-15 text-grey-4">Follow Us</h5>
-					<a href="#"><img src="{{asset('imgs/theme/icons/icon-facebook.svg')}}" alt=""></a>
-					<a href="#"><img src="{{asset('imgs/theme/icons/icon-twitter.svg')}}" alt=""></a>
-					<a href="#"><img src="{{asset('imgs/theme/icons/icon-instagram.svg')}}" alt=""></a>
-					<a href="#"><img src="{{asset('imgs/theme/icons/icon-pinterest.svg')}}" alt=""></a>
-					<a href="#"><img src="{{asset('imgs/theme/icons/icon-youtube.svg')}}" alt=""></a>
+					<a href="#"><img src="{{asset('img/theme/icons/icon-facebook.svg')}}" alt=""></a>
+					<a href="#"><img src="{{asset('img/theme/icons/icon-twitter.svg')}}" alt=""></a>
+					<a href="#"><img src="{{asset('img/theme/icons/icon-instagram.svg')}}" alt=""></a>
+					<a href="#"><img src="{{asset('img/theme/icons/icon-pinterest.svg')}}" alt=""></a>
+					<a href="#"><img src="{{asset('img/theme/icons/icon-youtube.svg')}}" alt=""></a>
 				</div>
 			</div>
 		</div>
@@ -602,7 +602,7 @@
 					<div class="col-lg-7 mb-md-3 mb-lg-0">
 						<div class="row align-items-center">
 							<div class="col flex-horizontal-center">
-								<img class="icon-email" src="{{asset('imgs/theme/icons/icon-email.svg')}}" alt="">
+								<img class="icon-email" src="{{asset('img/theme/icons/icon-email.svg')}}" alt="">
 								<h4 class="font-size-20 mb-0 ml-3">Sign up to Newsletter</h4>
 							</div>
 							<div class="col my-4 my-md-0 des">
@@ -627,7 +627,7 @@
 					<div class="col-lg-4 col-md-6">
 						<div class="widget-about font-md mb-md-5 mb-lg-0">
 							<div class="logo logo-width-1 wow fadeIn animated">
-								<a href="index.html"><img src="{{asset('imgs/logo/logo.png')}}" alt="logo"></a>
+								<a href="index.html"><img src="{{asset('img/logo/logo.png')}}" alt="logo"></a>
 							</div>
 							<h5 class="mt-20 mb-10 fw-600 text-grey-4 wow fadeIn animated">Contact</h5>
 							<p class="wow fadeIn animated">
@@ -641,11 +641,11 @@
 							</p>
 							<h5 class="mb-10 mt-30 fw-600 text-grey-4 wow fadeIn animated">Follow Us</h5>
 							<div class="mobile-social-icon wow fadeIn animated mb-sm-5 mb-md-0">
-								<a href="#"><img src="{{asset('imgs/theme/icons/icon-facebook.svg')}}" alt=""></a>
-								<a href="#"><img src="{{asset('imgs/theme/icons/icon-twitter.svg')}}" alt=""></a>
-								<a href="#"><img src="{{asset('imgs/theme/icons/icon-instagram.svg')}}" alt=""></a>
-								<a href="#"><img src="{{asset('imgs/theme/icons/icon-pinterest.svg')}}" alt=""></a>
-								<a href="#"><img src="{{asset('imgs/theme/icons/icon-youtube.svg')}}" alt=""></a>
+								<a href="#"><img src="{{asset('img/theme/icons/icon-facebook.svg')}}" alt=""></a>
+								<a href="#"><img src="{{asset('img/theme/icons/icon-twitter.svg')}}" alt=""></a>
+								<a href="#"><img src="{{asset('img/theme/icons/icon-instagram.svg')}}" alt=""></a>
+								<a href="#"><img src="{{asset('img/theme/icons/icon-pinterest.svg')}}" alt=""></a>
+								<a href="#"><img src="{{asset('img/theme/icons/icon-youtube.svg')}}" alt=""></a>
 							</div>
 						</div>
 					</div>
@@ -675,13 +675,13 @@
 							<div class="col-md-8 col-lg-12">
 								<p class="wow fadeIn animated">From App Store or Google Play</p>
 								<div class="download-app wow fadeIn animated mob-app">
-									<a href="#" class="hover-up mb-sm-4 mb-lg-0"><img class="active" src="{{asset('imgs/theme/app-store.jpg')}}" alt=""></a>
-									<a href="#" class="hover-up"><img src="{{asset('imgs/theme/google-play.jpg')}}" alt=""></a>
+									<a href="#" class="hover-up mb-sm-4 mb-lg-0"><img class="active" src="{{asset('img/theme/app-store.jpg')}}" alt=""></a>
+									<a href="#" class="hover-up"><img src="{{asset('img/theme/google-play.jpg')}}" alt=""></a>
 								</div>
 							</div>
 							<div class="col-md-4 col-lg-12 mt-md-3 mt-lg-0">
 								<p class="mb-20 wow fadeIn animated">Secured Payment Gateways</p>
-								<img class="wow fadeIn animated" src="{{asset('imgs/theme/payment-method.png')}}" alt="">
+								<img class="wow fadeIn animated" src="{{asset('img/theme/payment-method.png')}}" alt="">
 							</div>
 						</div>
 					</div>
