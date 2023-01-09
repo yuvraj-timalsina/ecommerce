@@ -1,4 +1,12 @@
 <div>
+    <style>
+        nav svg{
+            height: 20px;
+        }
+        nav .hidden {
+            display: block;
+        }
+    </style>
 <main class="main">
         <div class="page-header breadcrumb-wrap">
             <div class="container">
@@ -92,7 +100,7 @@
                                         </div>
                                         <div class="product-price">
                                             <span>
-                                                {{$product->price}}
+                                                ${{$product->regular_price}}
                                             </span>
 {{--                                            <span class="old-price">$245.8</span>--}}
                                         </div>
