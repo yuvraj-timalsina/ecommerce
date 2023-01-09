@@ -74,7 +74,7 @@
 			<div class="container">
 				<div class="header-wrap">
 					<div class="logo logo-width-1">
-						<a href="index.html"><img src="{{asset('img/logo/logo.png')}}" alt="logo"></a>
+						<a href="{{route('home')}}"><img src="{{asset('img/logo/logo.png')}}" alt="logo"></a>
 					</div>
 					<div class="header-right">
 						<div class="search-style-1">
@@ -143,7 +143,7 @@
 			<div class="container">
 				<div class="header-wrap header-space-between position-relative">
 					<div class="logo logo-width-1 d-block d-lg-none">
-						<a href="index.html"><img src="{{asset('img/logo/logo.png')}}" alt="logo"></a>
+						<a href="{{route('home')}}"><img src="{{asset('img/logo/logo.png')}}" alt="logo"></a>
 					</div>
 					<div class="header-nav d-none d-lg-flex">
 						<div class="main-category-wrap d-none d-lg-block">
@@ -330,9 +330,9 @@
 						<div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block">
 							<nav>
 								<ul>
-									<li><a class="active" href="index.html">Home </a></li>
+									<li><a  href="{{route('home')}}" class="{{ request()->routeIs('home') ? 'active' : '' }}">Home </a></li>
 									<li><a href="about.html">About</a></li>
-									<li><a href="shop.html">Shop</a></li>
+									<li><a href="{{route('shop')}}" class="{{ request()->routeIs('shop') ? 'active' : '' }}">Shop</a></li>
 									<li class="position-static"><a href="#">Our Collections <i class="fi-rs-angle-down"></i></a>
 										<ul class="mega-menu">
 											<li class="sub-mega-menu sub-mega-menu-width-22">

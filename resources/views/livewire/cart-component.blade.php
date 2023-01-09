@@ -27,7 +27,7 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td class="image product-thumbnail"><img src="{{asset('imgs/shop/product-1-2.jpg')}}" alt="#"></td>
+                                        <td class="image product-thumbnail"><img src="{{asset('img/shop/product-1-2.jpg')}}" alt="#"></td>
                                         <td class="product-des product-name">
                                             <h5 class="product-name"><a href="product-details.html">J.Crew Mercantile Women's Short-Sleeve</a></h5>
                                             <p class="font-xs">Maboriosam in a tonto nesciung eget<br> distingy magndapibus.
@@ -47,7 +47,7 @@
                                         <td class="action" data-title="Remove"><a href="#" class="text-muted"><i class="fi-rs-trash"></i></a></td>
                                     </tr>
                                     <tr>
-                                        <td class="image"><img src="{{asset('imgs/shop/product-11-2.jpg')}}'" alt="#"></td>
+                                        <td class="image"><img src="{{asset('img/shop/product-11-2.jpg')}}'" alt="#"></td>
                                         <td class="product-des">
                                             <h5 class="product-name"><a href="product-details.html">Amazon Essentials Women's Tank</a></h5>
                                             <p class="font-xs">Sit at ipsum amet clita no est,<br> sed amet sadipscing et gubergren</p>
@@ -66,7 +66,7 @@
                                         <td class="action" data-title="Remove"><a href="#" class="text-muted"><i class="fi-rs-trash"></i></a></td>
                                     </tr>
                                     <tr>
-                                        <td class="image"><img src="{{asset('imgs/shop/product-6-1.jpg')}}'" alt="#"></td>
+                                        <td class="image"><img src="{{asset('img/shop/product-6-1.jpg')}}'" alt="#"></td>
                                         <td class="product-des">
                                             <h5 class="product-name"><a href="product-details.html">Amazon Brand - Daily Ritual Women's Jersey </a></h5>
                                             <p class="font-xs">Erat amet et et amet diam et et.<br> Justo amet at dolore

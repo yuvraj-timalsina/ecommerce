@@ -1043,9 +1043,9 @@
         <section class="popular-categories section-padding mt-15 mb-25">
             <div class="container wow fadeIn animated">
                 <h3 class="section-title mb-20"><span>Popular</span> Categories</h3>
-                <div class="carausel-6-columns-cover position-relative">
-                    <div class="slider-arrow slider-arrow-2 carausel-6-columns-arrow" id="carausel-6-columns-arrows"></div>
-                    <div class="carausel-6-columns" id="carausel-6-columns">
+                <div class="carousel-6-columns-cover position-relative">
+                    <div class="slider-arrow slider-arrow-2 carousel-6-columns-arrow" id="carousel-6-columns-arrows"></div>
+                    <div class="carousel-6-columns" id="carousel-6-columns">
                         <div class="card-1">
                             <figure class=" img-hover-scale overflow-hidden">
                                 <a href="shop.html"><img src="{{asset('img/shop/category-thumb-1.jpg')}}" alt=""></a>
@@ -1137,9 +1137,9 @@
         <section class="section-padding">
             <div class="container wow fadeIn animated">
                 <h3 class="section-title mb-20"><span>New</span> Arrivals</h3>
-                <div class="carausel-6-columns-cover position-relative">
-                    <div class="slider-arrow slider-arrow-2 carausel-6-columns-arrow" id="carausel-6-columns-2-arrows"></div>
-                    <div class="carausel-6-columns carausel-arrow-center" id="carausel-6-columns-2">
+                <div class="carousel-6-columns-cover position-relative">
+                    <div class="slider-arrow slider-arrow-2 carousel-6-columns-arrow" id="carousel-6-columns-2-arrows"></div>
+                    <div class="carousel-6-columns carousel-arrow-center" id="carousel-6-columns-2">
                         <div class="product-cart-wrap small hover-up">
                             <div class="product-img-action-wrap">
                                 <div class="product-img product-img-zoom">
@@ -1362,9 +1362,9 @@
         <section class="section-padding">
             <div class="container">
                 <h3 class="section-title mb-20 wow fadeIn animated"><span>Featured</span> Brands</h3>
-                <div class="carausel-6-columns-cover position-relative wow fadeIn animated">
-                    <div class="slider-arrow slider-arrow-2 carausel-6-columns-arrow" id="carausel-6-columns-3-arrows"></div>
-                    <div class="carausel-6-columns text-center" id="carausel-6-columns-3">
+                <div class="carousel-6-columns-cover position-relative wow fadeIn animated">
+                    <div class="slider-arrow slider-arrow-2 carousel-6-columns-arrow" id="carousel-6-columns-3-arrows"></div>
+                    <div class="carousel-6-columns text-center" id="carousel-6-columns-3">
                         <div class="brand-logo">
                             <img class="img-grey-hover" src="{{asset('img/banner/brand-1.png')}}" alt="">
                         </div>

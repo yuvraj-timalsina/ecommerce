@@ -1926,63 +1926,63 @@ label {
 }
 
 /*Carausel*/
-.carausel-6-columns-cover .carausel-6-columns {
+.carousel-6-columns-cover .carousel-6-columns {
   overflow: hidden;
   margin: 0 -12px;
 }
 
-.carausel-6-columns-cover .carausel-6-columns .card-1 {
+.carousel-6-columns-cover .carousel-6-columns .card-1 {
   margin-right: 12px;
   margin-left: 12px;
 }
 
-.carausel-6-columns-cover .product-img {
+.carousel-6-columns-cover .product-img {
   border: 1px solid #cce7d0;
 }
 
-.carausel-6-columns-cover .slider-arrow {
+.carousel-6-columns-cover .slider-arrow {
   top: -50px;
 }
 
-.carausel-6-columns-cover .slider-arrow .slider-btn.slider-next {
+.carousel-6-columns-cover .slider-arrow .slider-btn.slider-next {
   right: 0;
 }
 
-.carausel-6-columns-cover .slider-arrow .slider-btn.slider-prev {
+.carousel-6-columns-cover .slider-arrow .slider-btn.slider-prev {
   right: 40px;
   left: unset;
 }
 
-.carausel-6-columns-cover.arrow-center .slider-arrow {
+.carousel-6-columns-cover.arrow-center .slider-arrow {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   margin-top: -50px;
 }
 
-.carausel-6-columns-cover.arrow-center .slider-arrow .slider-btn.slider-next {
+.carousel-6-columns-cover.arrow-center .slider-arrow .slider-btn.slider-next {
   right: -30px;
 }
 
-.carausel-6-columns-cover.arrow-center .slider-arrow .slider-btn.slider-prev {
+.carousel-6-columns-cover.arrow-center .slider-arrow .slider-btn.slider-prev {
   left: -30px;
 }
 
-.carausel-6-columns-cover.arrow-center .slider-arrow.slider-arrow-3 {
+.carousel-6-columns-cover.arrow-center .slider-arrow.slider-arrow-3 {
   margin-top: 0;
 }
 
-.carausel-4-columns-cover .carausel-4-columns {
+.carousel-4-columns-cover .carousel-4-columns {
   overflow: hidden;
   margin: 0 -12px;
 }
 
-.carausel-4-columns-cover .carausel-4-columns .product-cart-wrap {
+.carousel-4-columns-cover .carousel-4-columns .product-cart-wrap {
   margin-right: 12px;
   margin-left: 12px;
 }
 
-.carausel-4-columns-cover .carausel-4-columns-arrow {
+.carousel-4-columns-cover .carousel-4-columns-arrow {
   margin-top: -100px;
 }
 
@@ -9609,7 +9609,7 @@ span.fi-rs-apps {
   .single-header .single-header-meta, .entry-bottom {
     display: block;
   }
-  .carausel-6-columns, .carausel-4-columns {
+  .carousel-6-columns, .carousel-4-columns {
     max-width: 375px;
     overflow: hidden;
   }

@@ -69,8 +69,8 @@
         autoplay: true,
     });
 
-    /*Carausel 6 columns*/
-    $(".carausel-6-columns").each(function(key, item) {
+    /*Carousel 6 columns*/
+    $(".carousel-6-columns").each(function(key, item) {
         var id=$(this).attr("id");
         var sliderID='#'+id;
         var appendArrowsClassName = '#'+id+'-arrows'
@@ -114,8 +114,8 @@
         });
     });
 
-    /*Carausel 4 columns*/
-    $(".carausel-4-columns").each(function(key, item) {
+    /*Carousel 4 columns*/
+    $(".carousel-4-columns").each(function(key, item) {
         var id=$(this).attr("id");
         var sliderID='#'+id;
         var appendArrowsClassName = '#'+id+'-arrows'
@@ -155,7 +155,7 @@
     /*Fix Bootstrap 5 tab & slick slider*/
 
     $('button[data-bs-toggle="tab"]').on('shown.bs.tab', function (e) {
-		$('.carausel-4-columns').slick('setPosition');
+		$('.carousel-4-columns').slick('setPosition');
 	});
 
      /*------ Timer Countdown ----*/

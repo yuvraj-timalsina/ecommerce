@@ -3,11 +3,14 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
-
+use App\Models\Product;
+use Livewire\WithPagination;
 class ShopComponent extends Component
 {
+    use WithPagination;
     public function render()
     {
-        return view('livewire.shop-component');
+        $products = Product::paginate(12);
+        return view('livewire.shop-component', compact('products'));
     }
 }
