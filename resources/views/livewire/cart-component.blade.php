@@ -3,8 +3,8 @@
 		<div class="page-header breadcrumb-wrap">
 			<div class="container">
 				<div class="breadcrumb">
-					<a href="index.html" rel="nofollow">Home</a>
-					<span></span> Shop
+					<a href="{{route('home')}}" rel="nofollow">Home</a>
+					<span></span> <a href="{{route('shop')}}" rel="nofollow">Shop</a>
 					<span></span> Your Cart
 				</div>
 			</div>
@@ -14,24 +14,24 @@
 				<div class="row">
 					<div class="col-12">
 						<div class="table-responsive">
-							<table class="table shopping-summery text-center clean">
-								<thead>
-									<tr class="main-heading">
-										<th scope="col">Image</th>
-										<th scope="col">Name</th>
-										<th scope="col">Price</th>
-										<th scope="col">Quantity</th>
-										<th scope="col">Subtotal</th>
-										<th scope="col">Remove</th>
-									</tr>
-								</thead>
-								<tbody>
-									@if(session()->has('success_message'))
-										<div class="alert alert-success">
-											<strong>Success | {{session()->get('success_message')}}</strong>
-										</div>
-									@endif
-									@if(Cart::count() > 0)
+							@if(session()->has('success_message'))
+								<div class="alert alert-success">
+									<strong>Success | {{session()->get('success_message')}}</strong>
+								</div>
+							@endif
+							@if(Cart::count() > 0)
+								<table class="table shopping-summery text-center clean">
+									<thead>
+										<tr class="main-heading">
+											<th scope="col">Image</th>
+											<th scope="col">Name</th>
+											<th scope="col">Price</th>
+											<th scope="col">Quantity</th>
+											<th scope="col">Subtotal</th>
+											<th scope="col">Remove</th>
+										</tr>
+									</thead>
+									<tbody>
 										@foreach(Cart::content() as $item)
 											<tr>
 												<td class="image product-thumbnail"><img src="{{asset('img/shop/product')}}-{{$item->id}}-1.jpg" alt="#"></td>
@@ -52,19 +52,19 @@
 												<td class="text-right" data-title="Cart">
 													<span>${{$item->subtotal}} </span>
 												</td>
-												<td class="action" data-title="Remove"><a href="#" class="text-muted"><i class="fi-rs-trash"></i></a></td>
+												<td class="action" data-title="Remove"><a wire:click.prevent="destroy('{{$item->rowId}}')" href="#" class="text-danger"><i class="fi-rs-trash"></i></a></td>
 											</tr>
 										@endforeach
-									@else
-										<p>No Items In Cart!</p>
-									@endif
-									<tr>
-										<td colspan="6" class="text-end">
-											<a href="#" class="text-muted"> <i class="fi-rs-cross-small"></i> Clear Cart</a>
-										</td>
-									</tr>
-								</tbody>
-							</table>
+										<tr>
+											<td colspan="6" class="text-end">
+												<a wire:click.prevent="clearCart()" href="#" class="text-muted"> <i class="fi-rs-cross-small"></i> Clear Cart</a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							@else
+								<strong>No Items In Cart!</strong>
+							@endif
 						</div>
 						<div class="cart-action text-end">
 							<a class="btn  mr-10 mb-sm-15"><i class="fi-rs-shuffle mr-10"></i>Update Cart</a>
