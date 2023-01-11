@@ -34,9 +34,9 @@
 									<tbody>
 										@foreach(Cart::content() as $item)
 											<tr>
-												<td class="image product-thumbnail"><img src="{{asset('img/shop/product')}}-{{$item->id}}-1.jpg" alt="#"></td>
+												<td class="image product-thumbnail"><img src="{{asset('img/shop/product')}}-{{$item->id}}-1.jpg" alt="{{$item->name}}"></td>
 												<td class="product-des product-name">
-													<h5 class="product-name"><a href="#">
+													<h5 class="product-name"><a href="{{route('product.details', Str::slug($item->name))}}">
 															{{$item->name}}
 														</a></h5>
 													{{--                                            <p class="font-xs">Maboriosam in a tonto nesciung eget<br> distingy magndapibus.</p>--}}
