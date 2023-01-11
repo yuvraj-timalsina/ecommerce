@@ -66,7 +66,7 @@
                                 </div>
                                 <div class="col-md-6 col-sm-12 col-xs-12">
                                     <div class="detail-info">
-                                        <h2 class="title-detail">
+                                        <h2 class="title-detail text-capitalize">
                                             {{$product->name}}
                                         </h2>
                                         <div class="product-detail-rating">
@@ -389,7 +389,7 @@
                                         </div>
                                         <!--comment form-->
                                         <div class="comment-form">
-                                            <h4 class="mb-15">Add a review</h4>
+                                            <h4 class="mb-15">Add a Review</h4>
                                             <div class="product-rate d-inline-block mb-30">
                                             </div>
                                             <div class="row">
@@ -454,7 +454,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="product-content-wrap">
-                                                    <h2><a href="{{route('product.details', $related_product->slug)}}" tabindex="0">
+                                                    <h2 class="text-capitalize"><a href="{{route('product.details', $related_product->slug)}}" tabindex="0">
                                                             {{$related_product->name}}
                                                         </a></h2>
                                                     <div class="rating-result" title="90%">
@@ -543,7 +543,7 @@
                                     <img src="{{ asset('img/shop/product')}}-{{$new_arrival->id}}-1.jpg" alt="#">
                                 </div>
                                 <div class="content pt-10">
-                                    <h5><a href="{{route('product.details', $new_arrival->slug)}}">
+                                    <h5 class="text-capitalize"><a href="{{route('product.details', $new_arrival->slug)}}">
                                             {{$new_arrival->name}}
                                         </a></h5>
                                     <p class="price mb-0 mt-5">${{$new_arrival->regular_price}}</p>

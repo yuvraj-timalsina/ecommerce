@@ -49,11 +49,12 @@ class CategoryComponent extends Component
         $category = Category::where('slug', $this->slug)->first();
         $category_id = $category->id;
         $category_name = $category->name;
-        if ($this->orderBy == 'Price: Low to High') {
+
+        if ($this->orderBy === 'Price: Low to High') {
             $products = Product::where('category_id', $category_id)->orderBy('regular_price', 'ASC')->paginate($this->pageSize);
-        } elseif ($this->orderBy == 'Price: High to Low') {
+        } elseif ($this->orderBy === 'Price: High to Low') {
             $products = Product::where('category_id', $category_id)->orderByDesc('regular_price')->paginate($this->pageSize);
-        } elseif ($this->orderBy == 'Sort By Newest') {
+        } elseif ($this->orderBy === 'Sort By Newest') {
             $products = Product::where('category_id', $category_id)->orderByDesc('created_at')->paginate($this->pageSize);
         } else {
             $products = Product::where('category_id', $category_id)->paginate($this->pageSize);
