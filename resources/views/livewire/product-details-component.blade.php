@@ -476,7 +476,7 @@
                     </div>
                     <div class="col-lg-3 primary-sidebar sticky-sidebar">
                         <div class="widget-category mb-30">
-                            <h5 class="section-title style-1 mb-30 wow fadeIn animated">Category</h5>
+                            <h5 class="section-title style-1 mb-30 wow fadeIn animated">Categories</h5>
                             <ul class="categories">
                                 <li><a href="shop.html">Shoes & Bags</a></li>
                                 <li><a href="shop.html">Blouses & Shirts</a></li>
