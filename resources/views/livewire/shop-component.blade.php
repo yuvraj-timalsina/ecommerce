@@ -138,10 +138,10 @@
 							</div>
 							<div class="price-filter">
 								<div class="price-filter-inner">
-									<div id="slider-range"></div>
+									<div id="slider-range" wire:ignore></div>
 									<div class="price_slider_amount">
 										<div class="label-input">
-											<span>Range:</span><input type="text" id="amount" name="price" placeholder="Add Your Price">
+											<span>Range:</span><strong class="text-info">${{$minValue}}</strong> - <strong class="text-info">${{$maxValue}}</strong>
 										</div>
 									</div>
 								</div>
@@ -231,3 +231,22 @@
 		</section>
 	</main>
 </div>
+@push('scripts')
+	<script>
+        var sliderRange = $('#slider-range');
+        var amountPrice = $('#amount');
+        $(function () {
+            sliderRange.slider({
+                range: true,
+                min: 0,
+                max: 1000,
+                values: [0, 1000],
+                slide: function (event, ui) {
+                    // amountPrice.val("$" + ui.values[0] + " - $" + ui.values[1]);
+					@this.set('minValue', ui.values[0]);
+					@this.set('maxValue', ui.values[1]);
+                }
+            });
+        });
+	</script>
+@endpush

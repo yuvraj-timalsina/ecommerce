@@ -17,6 +17,8 @@ class ShopComponent extends Component
 
     public $pageSize = 12;
     public $orderBy = 'Default Sorting';
+    public $minValue = 0;
+    public $maxValue = 1000;
 
 
     public function store($product_id, $product_name, $product_price): void
@@ -44,13 +46,13 @@ class ShopComponent extends Component
     public function render(): Factory|View|Application
     {
         if ($this->orderBy === 'Price: Low to High') {
-            $products = Product::orderBy('regular_price')->paginate($this->pageSize);
+            $products = Product::whereBetween('regular_price',[$this->minValue, $this->maxValue])->orderBy('regular_price')->paginate($this->pageSize);
         } elseif ($this->orderBy === 'Price: High to Low') {
-            $products = Product::orderByDesc('regular_price')->paginate($this->pageSize);
+            $products = Product::whereBetween('regular_price',[$this->minValue, $this->maxValue])->orderByDesc('regular_price')->paginate($this->pageSize);
         } elseif ($this->orderBy === 'Sort By Newest') {
-            $products = Product::orderByDesc('created_at')->paginate($this->pageSize);
+            $products = Product::whereBetween('regular_price',[$this->minValue, $this->maxValue])->orderByDesc('created_at')->paginate($this->pageSize);
         } else {
-            $products = Product::paginate($this->pageSize);
+            $products = Product::whereBetween('regular_price',[$this->minValue, $this->maxValue])->paginate($this->pageSize);
         }
         $categories = Category::orderBy('name')->get();
 
