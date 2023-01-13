@@ -4168,6 +4168,14 @@ table .product-thumbnail img {
     margin-right: 8px;
     color: #FFFFFF;
 }
+/*WISHLIST*/
+.wishlisted {
+    background-color: #F15412!important;
+    border: 1px solid transparent!important;
+}
+.wishlisted i {
+    color: #fff!important;
+}
 
 /*PRODUCT DETAILS*/
 .detail-gallery {

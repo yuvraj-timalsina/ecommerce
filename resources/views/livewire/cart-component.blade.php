@@ -19,7 +19,7 @@
 									<strong>Success | {{session()->get('success_message')}}</strong>
 								</div>
 							@endif
-							@if(Cart::count() > 0)
+							@if(Cart::instance('cart')->count() > 0)
 								<table class="table shopping-summery text-center clean">
 									<thead>
 										<tr class="main-heading">
@@ -32,7 +32,7 @@
 										</tr>
 									</thead>
 									<tbody>
-										@foreach(Cart::content() as $item)
+										@foreach(Cart::instance('cart')->content() as $item)
 											<tr>
 												<td class="image product-thumbnail"><img src="{{asset('img/shop/product')}}-{{$item->id}}-1.jpg" alt="{{$item->name}}"></td>
 												<td class="product-des product-name">

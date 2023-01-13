@@ -24,9 +24,10 @@ class ShopComponent extends Component
     public function store($product_id, $product_name, $product_price): void
     {
         $cartItem = Product::findOrFail($product_id);
-        Cart::add($product_id, $product_name, 1, $product_price, ['slug' => $cartItem->slug])->associate('Product');
-        session()->flash('success_message', 'Item Added To Cart!');
+        Cart::instance('cart')->add($product_id, $product_name, 1, $product_price, ['slug' => $cartItem->slug])->associate('Product');
+        $this->emitTo('cart-icon-component', 'refreshComponent');
 
+        session()->flash('success_message', 'Item Added To Cart!');
         to_route('shop.cart');
     }
 
@@ -43,16 +44,29 @@ class ShopComponent extends Component
     }
 
 
+    public function addToWishlist($product_id, $product_name, $product_price)
+    {
+        Cart::instance('wishlist')->add($product_id, $product_name, 1, $product_price)->associate('Product');
+        $this->emitTo('wishlist-icon-component', 'refreshComponent');
+    }
+
+
     public function render(): Factory|View|Application
     {
         if ($this->orderBy === 'Price: Low to High') {
-            $products = Product::whereBetween('regular_price',[$this->minValue, $this->maxValue])->orderBy('regular_price')->paginate($this->pageSize);
+            $products = Product::whereBetween('regular_price', [$this->minValue, $this->maxValue])
+                ->orderBy('regular_price')
+                ->paginate($this->pageSize);
         } elseif ($this->orderBy === 'Price: High to Low') {
-            $products = Product::whereBetween('regular_price',[$this->minValue, $this->maxValue])->orderByDesc('regular_price')->paginate($this->pageSize);
+            $products = Product::whereBetween('regular_price', [$this->minValue, $this->maxValue])
+                ->orderByDesc('regular_price')
+                ->paginate($this->pageSize);
         } elseif ($this->orderBy === 'Sort By Newest') {
-            $products = Product::whereBetween('regular_price',[$this->minValue, $this->maxValue])->orderByDesc('created_at')->paginate($this->pageSize);
+            $products = Product::whereBetween('regular_price', [$this->minValue, $this->maxValue])
+                ->orderByDesc('created_at')
+                ->paginate($this->pageSize);
         } else {
-            $products = Product::whereBetween('regular_price',[$this->minValue, $this->maxValue])->paginate($this->pageSize);
+            $products = Product::whereBetween('regular_price', [$this->minValue, $this->maxValue])->paginate($this->pageSize);
         }
         $categories = Category::orderBy('name')->get();
 
