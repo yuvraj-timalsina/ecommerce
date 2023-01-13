@@ -5,7 +5,7 @@
 				<div class="breadcrumb">
 					<a href="{{route('home')}}" rel="nofollow">Home</a>
 					<span></span> <a href="{{route('shop')}}" rel="nofollow">Shop</a>
-					<span></span> Add New Category
+					<span></span>Edit Category
 				</div>
 			</div>
 		</div>
@@ -17,7 +17,7 @@
 							<div class="card-header">
 								<div class="row d-flex">
 									<div class="col-6">
-										<h4 class="text-muted pt-3">New Category</h4>
+										<h4 class="text-muted pt-3">Edit Category</h4>
 									</div>
 									<div class="col-6">
 										<a href="{{route('admin.categories')}}" class="btn btn-success float-end">All Categories</a>
@@ -30,7 +30,7 @@
 									<strong>Success | {{session()->get('success_message')}}</strong>
 								</div>
 							@endif
-								<form wire:submit.prevent="storeCategory">
+								<form wire:submit.prevent="updateCategory">
 									<div class="form-floating mb-3">
 										<input wire:model="name" wire:keyup="generateSlug" name="name" type="text" id="name" class="form-control" placeholder="Name">
 										<label for="name">Name</label>
@@ -41,7 +41,7 @@
 										<label for="slug" class="form-label">Slug</label>
 										    @error('slug') <span class="text-danger">{{ $message }}</span> @enderror
 									</div>
-									<button type="submit" class="btn btn-primary float-end">Save</button>
+									<button type="submit" class="btn btn-primary float-end">Update</button>
 								</form>
 							</div>
 						</div>

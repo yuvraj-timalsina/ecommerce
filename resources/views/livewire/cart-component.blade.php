@@ -36,7 +36,7 @@
 											<tr>
 												<td class="image product-thumbnail"><img src="{{asset('img/shop/product')}}-{{$item->id}}-1.jpg" alt="{{$item->name}}"></td>
 												<td class="product-des product-name">
-													<h5 class="product-name"><a href="{{$item->options->slug ? route('product.details', $item->options->slug) : ''}}">
+													<h5 class="product-name text-capitalize"><a href="{{$item->options->slug ? route('product.details', $item->options->slug) : ''}}">
 															{{$item->name}}
 														</a></h5>
 													{{--                                            <p class="font-xs">Maboriosam in a tonto nesciung eget<br> distingy magndapibus.</p>--}}

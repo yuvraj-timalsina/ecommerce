@@ -40,7 +40,9 @@
 												<td>{{$loop->iteration + $categories->firstItem() - 1}}</td>
 												<td class="text-capitalize">{{$category->name}}</td>
 												<td>{{$category->slug}}</td>
-												<td></td>
+												<td>
+													<a href="{{route('admin.category.edit', $category)}}" class="text-info">Edit</a>
+												</td>
 											</tr>
 										@endforeach
 									</tbody>

@@ -15,10 +15,10 @@
 							<a href="{{$item->options->slug ? route('product.details', $item->options->slug) : ''}}"><img alt="{{$item->name}}" src="{{asset('img/shop/product')}}-{{$item->id}}-1.jpg"></a>
 						</div>
 						<div class="shopping-cart-title">
-							<h4><a href="{{$item->options->slug ? route('product.details', $item->options->slug) : ''}}">
+							<h4 class="text-capitalize"><a href="{{$item->options->slug ? route('product.details', $item->options->slug) : ''}}">
 									{{substr($item->name, 0, 20)}}
 								</a></h4>
-							<h3><span>{{$item->qty}} × </span>${{$item->price}}</h3>
+							<h3><strong>{{$item->qty}} × </strong>${{$item->price}}</h3>
 						</div>
 						<div class="shopping-cart-delete">
 							<a href="#"><i class="fi-rs-cross-small"></i></a>
