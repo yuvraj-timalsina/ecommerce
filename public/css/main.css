@@ -3458,7 +3458,7 @@ table .product-thumbnail img {
 
 .product-cart-wrap .product-action-1 button:after, .product-cart-wrap .product-action-1 a.action-btn:after {
     bottom: 100%;
-    left: 50%;
+    left: -32%;
     position: absolute;
     white-space: nowrap;
     border-radius: 5px;
