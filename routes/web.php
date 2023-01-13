@@ -9,6 +9,7 @@ use App\Http\Livewire\CheckoutComponent;
 use App\Http\Livewire\CategoryComponent;
 use App\Http\Livewire\WishlistComponent;
 use App\Http\Livewire\ProductDetailsComponent;
+use App\Http\Livewire\Admin\AddCategoryComponent;
 use App\Http\Livewire\User\UserDashboardComponent;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\Admin\AdminCategoriesComponent;
@@ -35,6 +36,7 @@ Route::middleware(['auth'])->prefix('user')->group(function () {
 Route::middleware(['auth', 'auth.admin'])->prefix('admin')->group(function () {
     Route::get('/dashboard', AdminDashboardComponent::class)->name('admin.dashboard');
     Route::get('/categories', AdminCategoriesComponent::class)->name('admin.categories');
+    Route::get('/category/add', AddCategoryComponent::class)->name('admin.category.add');
 });
 
 require __DIR__ . '/auth.php';

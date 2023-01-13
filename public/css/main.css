@@ -7337,14 +7337,6 @@ span.fi-rs-apps {
 
 /*Pagination*/
 
-.pagination-area nav svg {
-    height: 20px;
-}
-
-.pagination-area nav .hidden {
-    display: block;
-}
-
 .pagination-area .page-item {
     margin: 0 5px;
 }
