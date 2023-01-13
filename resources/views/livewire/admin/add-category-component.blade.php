@@ -25,11 +25,6 @@
 								</div>
 							</div>
 							<div class="card-body">
-								@if(session()->has('success_message'))
-								<div class="alert alert-success">
-									<strong>Success | {{session()->get('success_message')}}</strong>
-								</div>
-							@endif
 								<form wire:submit.prevent="storeCategory">
 									<div class="form-floating mb-3">
 										<input wire:model="name" wire:keyup="generateSlug" name="name" type="text" id="name" class="form-control" placeholder="Name">

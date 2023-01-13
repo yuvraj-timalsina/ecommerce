@@ -31,8 +31,8 @@ class AddCategoryComponent extends Component
     public function storeCategory()
     {
         Category::create($this->validate());
+        to_route('admin.categories');
         session()->flash('success_message', 'New Category Created!');
-        $this->reset();
     }
 
 

@@ -25,6 +25,11 @@
 								</div>
 							</div>
 							<div class="card-body">
+								@if(session()->has('success_message'))
+								<div class="alert alert-success">
+									<strong>Success | {{session()->get('success_message')}}</strong>
+								</div>
+							@endif
 								<table class="table table-striped">
 									<thead>
 										<tr>
@@ -42,6 +47,7 @@
 												<td>{{$category->slug}}</td>
 												<td>
 													<a href="{{route('admin.category.edit', $category)}}" class="text-info">Edit</a>
+													<a wire:click.prevent="deleteCategory({{$category->id}})" href="javascript:void(0)" class="text-danger ms-2">Delete</a>
 												</td>
 											</tr>
 										@endforeach
