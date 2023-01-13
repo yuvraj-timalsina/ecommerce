@@ -52,7 +52,7 @@
 									</div>
 									<div class="product-action-1 show">
 										<a wire:click.prevent="removeFromWishlist({{$item->id}})" aria-label="Remove From Wishlist" class="action-btn hover-up wishlisted" href="#"><i class="fi-rs-heart"></i></a>
-										{{--												<a aria-label="Add To Cart" class="action-btn hover-up" href="#" wire:click.prevent="store({{$item->id}}, '{{$item->name}}', {{$item->regular_price}})"><i class="fi-rs-shopping-bag-add"></i></a>--}}
+{{--																						<a aria-label="Add To Cart" class="action-btn hover-up" href="#" wire:click.prevent="store({{$item->id}}, '{{$item->name}}', {{$item->regular_price}})"><i class="fi-rs-shopping-bag-add"></i></a>--}}
 									</div>
 								</div>
 							</div>

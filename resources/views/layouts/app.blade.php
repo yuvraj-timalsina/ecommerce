@@ -14,6 +14,7 @@
 	<link rel="shortcut icon" type="image/x-icon" href="{{asset('img/theme/favicon.ico')}}">
 	<link rel="stylesheet" href="{{asset('css/main.css')}}">
 	<link rel="stylesheet" href="{{asset('css/custom.css')}}">
+	@stack('css')
 	@livewireStyles
 </head>
 
@@ -77,11 +78,11 @@
 						<a href="{{route('home')}}"><img src="{{asset('img/logo/logo.png')}}" alt="logo"></a>
 					</div>
 					<div class="header-right">
-					@livewire('header-search-component')
+						@livewire('header-search-component')
 						<div class="header-action-right">
 							<div class="header-action-2">
 								@livewire('wishlist-icon-component')
-							@livewire('cart-icon-component')
+								@livewire('cart-icon-component')
 							</div>
 						</div>
 					</div>
@@ -279,7 +280,7 @@
 						<div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block">
 							<nav>
 								<ul>
-									<li><a  href="{{route('home')}}" class="{{ request()->routeIs('home') ? 'active' : '' }}">Home </a></li>
+									<li><a href="{{route('home')}}" class="{{ request()->routeIs('home') ? 'active' : '' }}">Home </a></li>
 									<li><a href="about.html">About</a></li>
 									<li><a href="{{route('shop')}}" class="{{ request()->routeIs('shop') ? 'active' : '' }}">Shop</a></li>
 									<li class="position-static"><a href="#">Our Collections <i class="fi-rs-angle-down"></i></a>
@@ -341,13 +342,13 @@
 									</li>
 									<li><a href="blog.html">Blog </a></li>
 									<li><a href="contact.html">Contact</a></li>
-									<li><a href="#">My Account<i class="fi-rs-angle-down"></i></a>
-										@auth
+									@auth
+										<li><a href="#">My Account<i class="fi-rs-angle-down"></i></a>
 											@if(auth()->user()->user_type==='ADM')
 												<ul class="sub-menu">
 													<li><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
 													<li><a href="#">Products</a></li>
-													<li><a href="#">Categories</a></li>
+													<li><a href="{{route('admin.categories')}}">Categories</a></li>
 													<li><a href="#">Coupons</a></li>
 													<li><a href="#">Orders</a></li>
 													<li><a href="#">Customers</a></li>
@@ -357,8 +358,8 @@
 													<li><a href="{{route('user.dashboard')}}">Dashboard</a></li>
 												</ul>
 											@endif
-										@endauth
-									</li>
+										</li>
+									@endauth
 								</ul>
 							</nav>
 						</div>

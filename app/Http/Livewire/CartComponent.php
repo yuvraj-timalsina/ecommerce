@@ -24,10 +24,6 @@ class CartComponent extends Component
         $this->emitTo('cart-icon-component', 'refreshComponent');
     }
 
-
-
-
-
     public function destroy($id)
     {
         Cart::instance('cart')->remove($id);
