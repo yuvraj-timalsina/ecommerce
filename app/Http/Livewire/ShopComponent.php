@@ -51,6 +51,18 @@ class ShopComponent extends Component
     }
 
 
+    public function removeFromWishlist($product_id)
+    {
+        foreach (Cart::instance('wishlist')->content() as $item) {
+            if ($item->id === $product_id) {
+                Cart::instance('wishlist')->remove($item->rowId);
+                $this->emitTo('wishlist-icon-component', 'refreshComponent');
+                return;
+            }
+        }
+    }
+
+
     public function render(): Factory|View|Application
     {
         if ($this->orderBy === 'Price: Low to High') {

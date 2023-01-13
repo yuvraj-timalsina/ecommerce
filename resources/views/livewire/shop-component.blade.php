@@ -99,7 +99,7 @@
 											</div>
 											<div class="product-action-1 show">
 												@if($wishlistItems->contains($product->id))
-													<a aria-label="Remove from Wishlist" class="action-btn hover-up wishlisted" href="#"><i class="fi-rs-heart"></i></a>
+													<a wire:click.prevent="removeFromWishlist({{$product->id}})" aria-label="Remove From Wishlist" class="action-btn hover-up wishlisted" href="#"><i class="fi-rs-heart"></i></a>
 												@else
 													<a wire:click.prevent="addToWishlist({{$product->id}}, '{{$product->name}}', {{$product->regular_price}})" aria-label="Add To Wishlist" class="action-btn hover-up" href="#"><i class="fi-rs-heart"></i></a>
 												@endif
