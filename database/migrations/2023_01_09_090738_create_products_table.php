@@ -21,7 +21,7 @@ return new class extends Migration {
             $table->text('description')->nullable();
             $table->decimal('regular_price', 8, 2)->nullable();
             $table->decimal('sale_price', 8, 2)->nullable();
-            $table->string('SKU');
+            $table->string('sku');
             $table->enum('stock_status', ['in_stock', 'out_of_stock']);
             $table->boolean('featured')->default(FALSE);
             $table->unsignedInteger('quantity')->default(10);

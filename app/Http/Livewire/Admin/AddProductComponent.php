@@ -31,7 +31,7 @@ class AddProductComponent extends Component
     }
     public function storeProduct(): void
     {
-        $dataValid = $this->validate([
+        $data_valid = $this->validate([
             'name' => 'required',
             'slug' => 'required',
             'short_description' => 'nullable',
@@ -44,9 +44,9 @@ class AddProductComponent extends Component
             'category_id' => 'required',
         ]);
 
-        $dataValid['image'] = $this->image->store('products', 'public');
+        $data_valid['image'] = $this->image->store('products', 'public');
 
-        Product::create($dataValid);
+        Product::create($data_valid);
         to_route('admin.products');
         session()->flash('success_message', 'New Product Added!');
     }

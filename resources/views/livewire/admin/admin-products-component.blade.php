@@ -54,7 +54,7 @@
 												<td>{{$product->category->name}}</td>
 												<td>{{$product->created_at}}</td>
 												<td>
-													<a href="{{route('admin.category.edit', $product)}}" class="text-info">Edit</a>
+													<a href="{{route('admin.product.edit', $product)}}" class="text-info">Edit</a>
 													{{--													<a onclick="deleteConfirmation({{$product->id}})" href="#" class="text-danger ms-2">Delete</a>--}}
 												</td>
 											</tr>

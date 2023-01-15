@@ -24,12 +24,12 @@ class AddCategoryComponent extends Component
 
     public function storeCategory(): void
     {
-        $dataValid = $this->validate([
+        $data_valid = $this->validate([
             'name' => 'required',
             'slug' => 'required',
         ]);
 
-        Category::create($dataValid);
+        Category::create($data_valid);
         to_route('admin.categories');
         session()->flash('success_message', 'New Category Created!');
     }
