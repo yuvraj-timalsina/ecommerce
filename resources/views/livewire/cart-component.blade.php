@@ -34,7 +34,8 @@
 									<tbody>
 										@foreach(Cart::instance('cart')->content() as $item)
 											<tr>
-												<td class="image product-thumbnail"><img src="{{asset('img/shop/product')}}-{{$item->id}}-1.jpg" alt="{{$item->name}}"></td>
+												@dd($item)
+												<td class="image product-thumbnail"><img src="{{asset('storage/'. $item->image)}}" alt="{{$item->name}}"></td>
 												<td class="product-des product-name">
 													<h5 class="product-name text-capitalize"><a href="{{$item->options->slug ? route('product.details', $item->options->slug) : ''}}">
 															{{$item->name}}

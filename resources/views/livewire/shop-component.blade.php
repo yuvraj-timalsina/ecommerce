@@ -65,8 +65,8 @@
 										<div class="product-img-action-wrap">
 											<div class="product-img product-img-zoom">
 												<a href="{{route('product.details', $product->slug)}}">
-													<img class="default-img" src="{{asset('img/shop/product')}}-{{$product->id}}-1.jpg" alt="{{$product->name}}">
-													<img class="hover-img" src="{{asset('img/shop/product')}}-{{$product->id}}-2.jpg" alt="{{$product->name}}">
+													<img class="default-img" src="{{asset('storage/'. $product->image)}}" alt="{{$product->name}}">
+													<img class="hover-img" src="{{asset('storage/'. $product->image)}}" alt="{{$product->name}}">
 												</a>
 											</div>
 											<div class="product-action-1">

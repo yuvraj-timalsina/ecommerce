@@ -15,11 +15,11 @@
 					<div class="col-12">
 						<div class="card">
 							<div class="card-header">
-								<div class="row">
-									<div class="col-md-6">
-										All Categories
+								<div class="row d-flex">
+									<div class="col-6">
+										<h4 class="text-muted pt-3">All Categories</h4>
 									</div>
-									<div class="col-md-6">
+									<div class="col-6">
 										<a href="{{route('admin.category.add')}}" class="btn btn-success float-end">Add</a>
 									</div>
 								</div>

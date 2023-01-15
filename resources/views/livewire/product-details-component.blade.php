@@ -21,7 +21,7 @@
                                         <!-- MAIN SLIDES -->
                                         <div class="product-image-slider">
                                             <figure class="border-radius-10">
-                                                <img src="{{ asset('img/shop/product')}}-{{$product->id}}-2.jpg" alt="product image">
+                                                <img src="{{asset('storage/'. $product->image)}}" alt="{{$product->name}}">
                                             </figure>
                                             <figure class="border-radius-10">
                                                 <img src="{{ asset('img/shop/product-16-1.jpg')}}" alt="product image">

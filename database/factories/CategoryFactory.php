@@ -14,7 +14,7 @@ class CategoryFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition()
+    public function definition(): array
     {
         $category_name = $this->faker->unique()->words(2, TRUE);
         $slug = str()->slug($category_name);
