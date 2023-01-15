@@ -71,7 +71,7 @@ class EditProductComponent extends Component
         ]);
         if ($this->new_image) {
             unlink(public_path('/storage/' . $product->image));
-            $data_valid['image'] = $this->new_image->store('products', 'public');
+            $data_valid['image'] = $this->new_image->store('products');
         }
         $product->update($data_valid);
         session()->flash('success_message', 'Product Updated!');

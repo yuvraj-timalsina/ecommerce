@@ -16,7 +16,7 @@ class AdminProductsComponent extends Component
 
     public function deleteProduct(): void
     {
-        $product = Product::find($this->product_id);
+        $product = Product::findOrFail($this->product_id);
         unlink(public_path('/storage/' . $product->image));
         $product->delete();
 

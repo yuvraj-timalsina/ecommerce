@@ -30,6 +30,7 @@
 										<strong>Success | {{session()->get('success_message')}}</strong>
 									</div>
 								@endif
+								@if($categories->count() > 0)
 								<table class="table table-striped">
 									<thead>
 										<tr>
@@ -53,6 +54,9 @@
 										@endforeach
 									</tbody>
 								</table>
+									@else
+									<strong>No Categories Found!</strong>
+									@endif
 								{{$categories->links()}}
 							</div>
 						</div>

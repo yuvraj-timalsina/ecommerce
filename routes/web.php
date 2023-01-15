@@ -10,7 +10,10 @@ use App\Http\Livewire\CategoryComponent;
 use App\Http\Livewire\WishlistComponent;
 use App\Http\Livewire\EditCategoryComponent;
 use App\Http\Livewire\ProductDetailsComponent;
+use App\Http\Livewire\Admin\AddSlideComponent;
+use App\Http\Livewire\Admin\EditSlideComponent;
 use App\Http\Livewire\Admin\AddProductComponent;
+use App\Http\Livewire\Admin\HomeSliderComponent;
 use App\Http\Livewire\Admin\AddCategoryComponent;
 use App\Http\Livewire\Admin\EditProductComponent;
 use App\Http\Livewire\User\UserDashboardComponent;
@@ -39,13 +42,18 @@ Route::middleware(['auth'])->prefix('user')->group(function () {
 
 Route::middleware(['auth', 'auth.admin'])->prefix('admin')->group(function () {
     Route::get('/dashboard', AdminDashboardComponent::class)->name('admin.dashboard');
+    /** Categories Routes */
     Route::get('/categories', AdminCategoriesComponent::class)->name('admin.categories');
     Route::get('/category/add', AddCategoryComponent::class)->name('admin.category.add');
     Route::get('/category/edit/{category}', EditCategoryComponent::class)->name('admin.category.edit');
-
+    /** Products Routes */
     Route::get('/products', AdminProductsComponent::class)->name('admin.products');
     Route::get('/product/add', AddProductComponent::class)->name('admin.product.add');
     Route::get('/product/edit/{product}', EditProductComponent::class)->name('admin.product.edit');
+    /** Slider Routes */
+    Route::get('/sliders', HomeSliderComponent::class)->name('admin.slider');
+    Route::get('/slide/add', AddSlideComponent::class)->name('admin.slide.add');
+    Route::get('/slide/edit/{slider}', EditSlideComponent::class)->name('admin.slide.edit');
 });
 
 require __DIR__ . '/auth.php';
