@@ -44,7 +44,7 @@ class AddProductComponent extends Component
             'category_id' => 'required',
         ]);
 
-        $data_valid['image'] = $this->image->store('products', 'public');
+        $data_valid['image'] = $this->image->store('products');
 
         Product::create($data_valid);
         to_route('admin.products');

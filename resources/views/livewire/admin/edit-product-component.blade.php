@@ -38,7 +38,7 @@
 									@endif
 									<div class="mb-3">
 										<label for="image" class="form-label">Image</label>
-										<input wire:model="new_image" name="new_image" type="file" id="image" class="form-control">
+										<input wire:model="new_image" name="image" type="file" id="image" class="form-control">
 										@error('new_image') <span class="text-danger">{{ $message }}</span> @enderror
 									</div>
 									<div class="row mb-3">

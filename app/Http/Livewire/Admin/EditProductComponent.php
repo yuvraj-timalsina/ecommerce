@@ -66,7 +66,7 @@ class EditProductComponent extends Component
             'stock_status' => 'required',
             'featured' => 'required',
             'quantity' => 'required',
-            'new_image' => 'nullable',
+            'new_image' => 'nullable|image|mimes:jpg,jpeg,png,svg,gif|max:2048',
             'category_id' => 'required',
         ]);
         if ($this->new_image) {

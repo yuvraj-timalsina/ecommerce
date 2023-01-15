@@ -15,7 +15,7 @@ class AdminCategoriesComponent extends Component
 
      public function deleteCategory(): void
      {
-        Category::find($this->category_id)?->delete();
+        Category::findOrFail($this->category_id)->delete();
         session()->flash('success_message', 'Category Deleted!');
     }
 
