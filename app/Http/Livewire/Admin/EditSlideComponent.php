@@ -6,6 +6,7 @@ use Livewire\Component;
 use App\Models\HomeSlider;
 use Livewire\WithFileUploads;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\Storage;
 
 class EditSlideComponent extends Component
 {
@@ -49,7 +50,9 @@ class EditSlideComponent extends Component
             'status' => 'required',
         ]);
         if ($this->new_image) {
-            unlink(public_path('/storage/' . $slide->image));
+            if ($slide->image !== null && Storage::disk('public')->exists($slide->image)) {
+                Storage::delete($slide->image);
+            }
             $data_valid['image'] = $this->new_image->store('slides');
         }
         $slide->update($data_valid);

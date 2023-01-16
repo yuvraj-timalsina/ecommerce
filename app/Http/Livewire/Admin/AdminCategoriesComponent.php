@@ -17,7 +17,9 @@ class AdminCategoriesComponent extends Component
     public function deleteCategory(): void
     {
         $category = Category::findOrFail($this->category_id);
-        unlink(public_path('/storage/' . $category->image));
+        if (File::exists($category->image)) {
+            unlink(public_path('/storage/' . $category->image));
+        }
 
         $category->delete();
         session()->flash('success_message', 'Category Deleted!');

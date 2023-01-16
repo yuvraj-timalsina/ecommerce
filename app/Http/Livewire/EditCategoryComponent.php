@@ -6,6 +6,7 @@ use Livewire\Component;
 use App\Models\Category;
 use Livewire\WithFileUploads;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\Storage;
 
 class EditCategoryComponent extends Component
 {
@@ -47,7 +48,9 @@ class EditCategoryComponent extends Component
             'is_popular' => 'required',
         ]);
         if ($this->new_image) {
-            unlink(public_path('/storage/' . $product->image));
+            if ($category->image !== null && Storage::disk('public')->exists($category->image)) {
+                Storage::delete($category->image);
+            }
             $data_valid['image'] = $this->new_image->store('categories');
         }
 

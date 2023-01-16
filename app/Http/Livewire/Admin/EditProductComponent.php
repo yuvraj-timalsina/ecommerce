@@ -2,11 +2,13 @@
 
 namespace App\Http\Livewire\Admin;
 
+use File;
 use Livewire\Component;
 use App\Models\Product;
 use App\Models\Category;
 use Livewire\WithFileUploads;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\Storage;
 
 class EditProductComponent extends Component
 {
@@ -70,7 +72,9 @@ class EditProductComponent extends Component
             'category_id' => 'required',
         ]);
         if ($this->new_image) {
-            unlink(public_path('/storage/' . $product->image));
+            if ($product->image !== null && Storage::disk('public')->exists($product->image)) {
+                Storage::delete($product->image);
+            }
             $data_valid['image'] = $this->new_image->store('products');
         }
         $product->update($data_valid);
@@ -81,6 +85,7 @@ class EditProductComponent extends Component
     public function render(): View
     {
         $categories = Category::orderBy('name')->get();
+
         return view('livewire.admin.edit-product-component', compact('categories'));
     }
 }

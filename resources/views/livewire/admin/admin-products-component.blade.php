@@ -66,7 +66,7 @@
 									<strong>No Products Found!</strong>
 								@endif
 								
-								{{$products->links()}}
+								{{$products->links('vendor.pagination.custom')}}
 							</div>
 						</div>
 					</div>
