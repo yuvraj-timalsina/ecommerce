@@ -28,7 +28,6 @@ class AddSlideComponent extends Component
             'sub_title' => 'required',
             'offer' => 'required',
             'link' => 'required|url',
-            'status' => 'required',
         ]);
 
         $data_valid['image'] = $this->image->store('slides');

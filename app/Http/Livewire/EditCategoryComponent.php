@@ -47,7 +47,7 @@ class EditCategoryComponent extends Component
             'is_popular' => 'required',
         ]);
         if ($this->new_image) {
-            //            unlink(public_path('/storage/' . $product->image));
+            unlink(public_path('/storage/' . $product->image));
             $data_valid['image'] = $this->new_image->store('categories');
         }
 

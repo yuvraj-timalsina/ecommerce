@@ -70,7 +70,7 @@ class EditProductComponent extends Component
             'category_id' => 'required',
         ]);
         if ($this->new_image) {
-//            unlink(public_path('/storage/' . $product->image));
+            unlink(public_path('/storage/' . $product->image));
             $data_valid['image'] = $this->new_image->store('products');
         }
         $product->update($data_valid);

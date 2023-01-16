@@ -38,7 +38,7 @@ class EditSlideComponent extends Component
 
     public function updateSlide(): void
     {
-        $homeSlide = HomeSlider::findOrFail($this->slide_id);
+        $slide = HomeSlider::findOrFail($this->slide_id);
         $data_valid = $this->validate([
             'new_image' => 'nullable|image|mimes:jpg,jpeg,png,svg,gif|max:2048',
             'top_title' => 'required',
@@ -49,10 +49,10 @@ class EditSlideComponent extends Component
             'status' => 'required',
         ]);
         if ($this->new_image) {
-            unlink(public_path('/storage/' . $homeSlide->image));
+            unlink(public_path('/storage/' . $slide->image));
             $data_valid['image'] = $this->new_image->store('slides');
         }
-        $homeSlide->update($data_valid);
+        $slide->update($data_valid);
         session()->flash('success_message', 'Slide Updated!');
     }
 
