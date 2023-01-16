@@ -9,16 +9,16 @@
 		</a>
 		<div class="cart-dropdown-wrap cart-dropdown-hm2">
 			<ul>
-				@foreach(Cart::instance('cart')->content() as $item)
+				@foreach(Cart::instance('cart')->content() as $product)
 					<li>
 						<div class="shopping-cart-img">
-							<a href="{{$item->options->slug ? route('product.details', $item->options->slug) : ''}}"><img alt="{{$item->name}}" src="{{asset('storage/'. $item->image)}}"></a>
+							<a href="{{$product->options->slug ? route('product.details', $product->options->slug) : ''}}"><img alt="{{$product->name}}" src="{{asset('storage/'. $product->options->image)}}"></a>
 						</div>
 						<div class="shopping-cart-title">
-							<h4 class="text-capitalize"><a href="{{$item->options->slug ? route('product.details', $item->options->slug) : ''}}">
-									{{substr($item->name, 0, 20)}}
+							<h4 class="text-capitalize"><a href="{{$product->options->slug ? route('product.details', $product->options->slug) : ''}}">
+									{{substr($product->name, 0, 20)}}
 								</a></h4>
-							<h3><strong>{{$item->qty}} × </strong>${{$item->price}}</h3>
+							<h3><strong>{{$product->qty}} × </strong>${{$product->price}}</h3>
 						</div>
 						<div class="shopping-cart-delete">
 							<a href="#"><i class="fi-rs-cross-small"></i></a>

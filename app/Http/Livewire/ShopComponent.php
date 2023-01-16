@@ -23,8 +23,8 @@ class ShopComponent extends Component
 
     public function store($product_id, $product_name, $product_price): void
     {
-        $cartItem = Product::findOrFail($product_id);
-        Cart::instance('cart')->add($product_id, $product_name, 1, $product_price, ['slug' => $cartItem->slug])->associate('Product');
+        $cartItem = Product::find($product_id);
+        Cart::instance('cart')->add($product_id, $product_name, 1, $product_price, ['slug' => $cartItem->slug, 'image'=>$cartItem->image])->associate('Product');
         $this->emitTo('cart-icon-component', 'refreshComponent');
 
         session()->flash('success_message', 'Item Added To Cart!');

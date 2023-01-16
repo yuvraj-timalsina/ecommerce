@@ -3,11 +3,12 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use Illuminate\Contracts\View\View;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
 class CartComponent extends Component
 {
-    public function increaseQuantity($rowId)
+    public function increaseQuantity($rowId): void
     {
         $product = Cart::instance('cart')->get($rowId);
         $quantity = $product->qty + 1;
@@ -16,7 +17,7 @@ class CartComponent extends Component
     }
 
 
-    public function decreaseQuantity($rowId)
+    public function decreaseQuantity($rowId): void
     {
         $product = Cart::instance('cart')->get($rowId);
         $quantity = $product->qty - 1;
@@ -24,19 +25,19 @@ class CartComponent extends Component
         $this->emitTo('cart-icon-component', 'refreshComponent');
     }
 
-    public function destroy($id)
+    public function destroy($id): void
     {
         Cart::instance('cart')->remove($id);
         session()->flash('success_message', 'Item Removed From Cart!');
         $this->emitTo('cart-icon-component', 'refreshComponent');
     }
-  public function clearCart()
-    {
+  public function clearCart(): void
+  {
         Cart::instance('cart')->destroy();
         $this->emitTo('cart-icon-component', 'refreshComponent');
     }
 
-    public function render()
+    public function render(): View
     {
         return view('livewire.cart-component');
     }

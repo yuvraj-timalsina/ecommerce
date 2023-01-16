@@ -32,27 +32,27 @@
 										</tr>
 									</thead>
 									<tbody>
-										@foreach(Cart::instance('cart')->content() as $item)
+										@foreach(Cart::instance('cart')->content() as $product)
 											<tr>
-												<td class="image product-thumbnail"><img src="{{asset('storage/'. $item->image)}}" alt="{{$item->name}}"></td>
+													<td class="image product-thumbnail"><img src="{{asset('storage/'. $product->options->image)}}" alt="{{$product->name}}"></td>
 												<td class="product-des product-name">
-													<h5 class="product-name text-capitalize"><a href="{{$item->options->slug ? route('product.details', $item->options->slug) : ''}}">
-															{{$item->name}}
+													<h5 class="product-name text-capitalize"><a href="{{$product->options->slug ? route('product.details', $product->options->slug) : ''}}">
+															{{$product->name}}
 														</a></h5>
-													{{--                                            <p class="font-xs">Maboriosam in a tonto nesciung eget<br> distingy magndapibus.</p>--}}
+													{{-- <p class="font-xs">Maboriosam in a tonto nesciung eget<br> distingy magndapibus.</p>--}}
 												</td>
-												<td class="price" data-title="Price"><span>${{$item->price}} </span></td>
+												<td class="price" data-title="Price"><span>${{$product->price}} </span></td>
 												<td class="text-center" data-title="Stock">
 													<div class="detail-qty border radius m-auto">
-														<a wire:click.prevent="decreaseQuantity('{{$item->rowId}}')" href="#" class="qty-down"><i class="fi-rs-angle-small-down"></i></a>
-														<span class="qty-val">{{$item->qty}}</span>
-														<a wire:click.prevent="increaseQuantity('{{$item->rowId}}')" href="#" class="qty-up"><i class="fi-rs-angle-small-up"></i></a>
+														<a wire:click.prevent="decreaseQuantity('{{$product->rowId}}')" href="#" class="qty-down"><i class="fi-rs-angle-small-down"></i></a>
+														<span class="qty-val">{{$product->qty}}</span>
+														<a wire:click.prevent="increaseQuantity('{{$product->rowId}}')" href="#" class="qty-up"><i class="fi-rs-angle-small-up"></i></a>
 													</div>
 												</td>
 												<td class="text-right" data-title="Cart">
-													<span>${{$item->subtotal}} </span>
+													<span>${{$product->subtotal}} </span>
 												</td>
-												<td class="action" data-title="Remove"><a wire:click.prevent="destroy('{{$item->rowId}}')" href="#" class="text-danger"><i class="fi-rs-trash"></i></a></td>
+												<td class="action" data-title="Remove"><a wire:click.prevent="destroy('{{$product->rowId}}')" href="#" class="text-danger"><i class="fi-rs-trash"></i></a></td>
 											</tr>
 										@endforeach
 										<tr>
