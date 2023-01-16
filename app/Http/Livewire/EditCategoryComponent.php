@@ -4,13 +4,20 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Category;
+use Livewire\WithFileUploads;
 use Illuminate\Contracts\View\View;
 
 class EditCategoryComponent extends Component
 {
+    use WithFileUploads;
+
     public $category_id;
     public $name;
     public $slug;
+    public $image;
+    public $is_popular;
+    public $new_image;
+
 
     public function generateSlug(): void
     {
@@ -23,6 +30,8 @@ class EditCategoryComponent extends Component
         $this->category_id = $category->id;
         $this->name = $category->name;
         $this->slug = $category->slug;
+        $this->image = $category->image;
+        $this->is_popular = $category->is_popular;
     }
 
 
@@ -31,10 +40,17 @@ class EditCategoryComponent extends Component
 
         $category = Category::find($this->category_id);
 
-         $data_valid = $this->validate([
+        $data_valid = $this->validate([
             'name' => 'required',
             'slug' => 'required',
+            'new_image' => 'nullable|image|mimes:jpg,jpeg,png,svg,gif|max:2048',
+            'is_popular' => 'required',
         ]);
+        if ($this->new_image) {
+            //            unlink(public_path('/storage/' . $product->image));
+            $data_valid['image'] = $this->new_image->store('categories');
+        }
+
         $category->update($data_valid);
         session()->flash('success_message', 'Category Updated!');
     }

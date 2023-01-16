@@ -35,8 +35,10 @@
 									<thead>
 										<tr>
 											<th>S.N.</th>
+											<th>Image</th>
 											<th>Name</th>
 											<th>Slug</th>
+											<th>Popular</th>
 											<th>Action</th>
 										</tr>
 									</thead>
@@ -44,8 +46,10 @@
 										@foreach($categories as $category)
 											<tr>
 												<td>{{$loop->iteration + $categories->firstItem() - 1}}</td>
+												<td><img src="{{asset('storage/'. $category->image)}}" alt="{{$category->name}}" width="50"/></td>
 												<td class="text-capitalize">{{$category->name}}</td>
 												<td>{{$category->slug}}</td>
+												<td>{{$category->is_popular ? 'Yes' : 'No'}}</td>
 												<td>
 													<a href="{{route('admin.category.edit', $category)}}" class="text-info">Edit</a>
 													<a onclick="deleteConfirmation({{$category->id}})" href="#" class="text-danger ms-2">Delete</a>

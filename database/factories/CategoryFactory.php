@@ -2,10 +2,10 @@
 
 namespace Database\Factories;
 
+use App\Models\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
-
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\odel=Category>
+ * @extends Factory<Category>
  */
 class CategoryFactory extends Factory
 {
@@ -20,7 +20,9 @@ class CategoryFactory extends Factory
         $slug = str()->slug($category_name);
         return [
             'name'=> $category_name,
-            'slug'=> $slug
+            'slug'=> $slug,
+            'image' => $this->faker->imageUrl(),
+            'is_popular'=>random_int(0, 1),
         ];
     }
 }

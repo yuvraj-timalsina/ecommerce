@@ -13,11 +13,16 @@ class AdminCategoriesComponent extends Component
 
     public $category_id;
 
-     public function deleteCategory(): void
-     {
-        Category::findOrFail($this->category_id)->delete();
+
+    public function deleteCategory(): void
+    {
+        $category = Category::findOrFail($this->category_id);
+        unlink(public_path('/storage/' . $category->image));
+
+        $category->delete();
         session()->flash('success_message', 'Category Deleted!');
     }
+
 
     public function render(): View
     {
