@@ -24,11 +24,6 @@
 								</div>
 							</div>
 							<div class="card-body">
-								@if(session()->has('success_message'))
-									<div class="alert alert-success">
-										<strong>Success | {{session()->get('success_message')}}</strong>
-									</div>
-								@endif
 								<form wire:submit.prevent="updateSlide">
 									@if ($new_image)
 										<img src="{{ $new_image->temporaryUrl() }}" alt="" width="225">

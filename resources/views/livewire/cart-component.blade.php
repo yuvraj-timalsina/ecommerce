@@ -14,11 +14,6 @@
 				<div class="row">
 					<div class="col-12">
 						<div class="table-responsive">
-							@if(session()->has('success_message'))
-								<div class="alert alert-success">
-									<strong>Success | {{session()->get('success_message')}}</strong>
-								</div>
-							@endif
 							@if(Cart::instance('cart')->count() > 0)
 								<table class="table shopping-summery text-center clean">
 									<thead>

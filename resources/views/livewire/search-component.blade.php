@@ -56,6 +56,9 @@
 							</div>
 						</div>
 						<div class="row product-grid-3">
+							@php
+								$wishlistItems = Cart::instance('wishlist')->content()->pluck('id');
+							@endphp
 							@foreach($products as $product)
 								<div class="col-lg-4 col-md-4 col-6 col-sm-6">
 									<div class="product-cart-wrap mb-30">
@@ -95,7 +98,11 @@
 												{{--                                            <span class="old-price">$245.8</span>--}}
 											</div>
 											<div class="product-action-1 show">
+												@if($wishlistItems->contains($product->id))
 													<a wire:click.prevent="removeFromWishlist({{$product->id}})" aria-label="Remove From Wishlist" class="action-btn hover-up wishlisted" href="#"><i class="fi-rs-heart"></i></a>
+												@else
+													<a wire:click.prevent="addToWishlist({{$product->id}}, '{{$product->name}}', {{$product->regular_price}})" aria-label="Add To Wishlist" class="action-btn hover-up" href="#"><i class="fi-rs-heart"></i></a>
+												@endif
 												<a aria-label="Add To Cart" class="action-btn hover-up" href="#" wire:click.prevent="store({{$product->id}}, '{{$product->name}}', {{$product->regular_price}})"><i class="fi-rs-shopping-bag-add"></i></a>
 											</div>
 										</div>

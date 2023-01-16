@@ -78,7 +78,7 @@ class EditProductComponent extends Component
             $data_valid['image'] = $this->new_image->store('products');
         }
         $product->update($data_valid);
-        session()->flash('success_message', 'Product Updated!');
+        flasher('Product Updated Successfully!');
     }
 
 

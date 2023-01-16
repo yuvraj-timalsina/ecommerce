@@ -55,7 +55,7 @@ class EditCategoryComponent extends Component
         }
 
         $category->update($data_valid);
-        session()->flash('success_message', 'Category Updated!');
+        flasher('Category Updated Successfully!');
     }
 
 

@@ -56,7 +56,7 @@ class EditSlideComponent extends Component
             $data_valid['image'] = $this->new_image->store('slides');
         }
         $slide->update($data_valid);
-        session()->flash('success_message', 'Slide Updated!');
+        flasher('Slide Updated Successfully!');
     }
 
 

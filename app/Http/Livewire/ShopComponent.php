@@ -7,9 +7,7 @@ use Livewire\Component;
 use App\Models\Category;
 use Livewire\WithPagination;
 use Illuminate\Contracts\View\View;
-use Illuminate\Contracts\View\Factory;
 use Gloudemans\Shoppingcart\Facades\Cart;
-use Illuminate\Contracts\Foundation\Application;
 
 class ShopComponent extends Component
 {
@@ -27,7 +25,7 @@ class ShopComponent extends Component
         Cart::instance('cart')->add($product_id, $product_name, 1, $product_price, ['slug' => $cartItem->slug, 'image'=>$cartItem->image])->associate('Product');
         $this->emitTo('cart-icon-component', 'refreshComponent');
 
-        session()->flash('success_message', 'Item Added To Cart!');
+        flasher('Product Added To Cart Successfully!');
         to_route('shop.cart');
     }
 
@@ -44,7 +42,7 @@ class ShopComponent extends Component
     }
 
 
-    public function addToWishlist($product_id, $product_name, $product_price)
+    public function addToWishlist($product_id, $product_name, $product_price): void
     {
         $cartItem = Product::findOrFail($product_id);
         Cart::instance('wishlist')->add($product_id, $product_name, 1, $product_price, ['slug' => $cartItem->slug])->associate('Product');
@@ -52,7 +50,7 @@ class ShopComponent extends Component
     }
 
 
-    public function removeFromWishlist($product_id)
+    public function removeFromWishlist($product_id): void
     {
         foreach (Cart::instance('wishlist')->content() as $item) {
             if ($item->id === $product_id) {
@@ -64,7 +62,7 @@ class ShopComponent extends Component
     }
 
 
-    public function render(): Factory|View|Application
+    public function render(): View
     {
         if ($this->orderBy === 'Price: Low to High') {
             $products = Product::whereBetween('regular_price', [$this->minValue, $this->maxValue])

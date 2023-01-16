@@ -25,17 +25,23 @@ class CartComponent extends Component
         $this->emitTo('cart-icon-component', 'refreshComponent');
     }
 
+
+    public function clearCart(): void
+    {
+        Cart::instance('cart')->destroy();
+        $this->emitTo('cart-icon-component', 'refreshComponent');
+
+    }
+
+
     public function destroy($id): void
     {
         Cart::instance('cart')->remove($id);
-        session()->flash('success_message', 'Item Removed From Cart!');
+        flasher('Item Removed From Cart Successfully!');
+
         $this->emitTo('cart-icon-component', 'refreshComponent');
     }
-  public function clearCart(): void
-  {
-        Cart::instance('cart')->destroy();
-        $this->emitTo('cart-icon-component', 'refreshComponent');
-    }
+
 
     public function render(): View
     {
