@@ -23,7 +23,7 @@ class AdminProductsComponent extends Component
         }
         $product->delete();
 
-        session()->flash('success_message', 'Product Deleted!');
+        flasher('Product Deleted Successfully!');
     }
 
 

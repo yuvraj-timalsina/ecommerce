@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Admin;
 
+use File;
 use Livewire\Component;
 use App\Models\HomeSlider;
 use Livewire\WithPagination;
@@ -18,10 +19,12 @@ class HomeSliderComponent extends Component
     public function deleteSlide(): void
     {
         $slide = HomeSlider::findOrFail($this->slide_id);
-        unlink(public_path('/storage/' . $slide->image));
+        if (File::exists($slide->image)) {
+            unlink(public_path('/storage/' . $slide->image));
+        }
         $slide->delete();
 
-        session()->flash('success_message', 'Slide Deleted!');
+        flasher('Slide Deleted Successfully!');
     }
 
 

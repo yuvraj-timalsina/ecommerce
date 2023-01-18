@@ -28,13 +28,14 @@ class AddSlideComponent extends Component
             'sub_title' => 'required',
             'offer' => 'required',
             'link' => 'required|url',
+            'status' => 'required',
         ]);
 
         $data_valid['image'] = $this->image->store('slides');
 
         HomeSlider::create($data_valid);
         to_route('admin.slider');
-        session()->flash('success_message', 'New Slide Added!');
+        session()->flash('success_message', 'Slide Added Successfully!');
     }
 
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Admin;
 
+use File;
 use Livewire\Component;
 use App\Models\Category;
 use Livewire\WithPagination;
@@ -22,7 +23,8 @@ class AdminCategoriesComponent extends Component
         }
 
         $category->delete();
-        session()->flash('success_message', 'Category Deleted!');
+
+        flasher('Category Deleted Successfully!');
     }
 
 

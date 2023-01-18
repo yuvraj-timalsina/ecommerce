@@ -66,23 +66,29 @@ class SearchComponent extends Component
             if ($item->id === $product_id) {
                 Cart::instance('wishlist')->remove($item->rowId);
                 $this->emitTo('wishlist-icon-component', 'refreshComponent');
+
                 return;
             }
         }
     }
 
+
     public function render(): View
     {
         if ($this->orderBy === 'Price: Low to High') {
-            $products = Product::where('name', 'LIKE', $this->searchTerm)->orderBy('regular_price', 'ASC')->paginate($this->pageSize);
+            $products = Product::where('name', 'LIKE', $this->searchTerm)
+                ->orderBy('regular_price')->paginate($this->pageSize);
         } elseif ($this->orderBy === 'Price: High to Low') {
-            $products = Product::where('name', 'LIKE', $this->searchTerm)->orderByDesc('regular_price')->paginate($this->pageSize);
+            $products = Product::where('name', 'LIKE', $this->searchTerm)
+                ->orderByDesc('regular_price')->paginate($this->pageSize);
         } elseif ($this->orderBy === 'Sort By Newest') {
-            $products = Product::where('name', 'LIKE', $this->searchTerm)->orderByDesc('created_at')->paginate($this->pageSize);
+            $products = Product::where('name', 'LIKE', $this->searchTerm)
+                ->orderByDesc('created_at')->paginate($this->pageSize);
         } else {
-            $products = Product::where('name', 'LIKE', $this->searchTerm)->paginate($this->pageSize);
+            $products = Product::where('name', 'LIKE', $this->searchTerm)
+                ->paginate($this->pageSize);
         }
-        $categories = Category::orderBy('name', 'ASC')->get();
+        $categories = Category::orderBy('name')->get();
 
         return view('livewire.search-component', compact('products', 'categories'));
     }
